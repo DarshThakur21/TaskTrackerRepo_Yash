@@ -1,4 +1,4 @@
-package com.yash.models;
+package com.yash.smarttasktracker.entity;
 
 
 import java.util.ArrayList;
