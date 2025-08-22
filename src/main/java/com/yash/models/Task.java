@@ -1,8 +1,7 @@
-package com.yash.pojos;
+package com.yash.models;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 class Task {
     private Long id;
