@@ -1,50 +1,120 @@
 package com.yash.models;
 
+
+import com.yash.models.TaskPriority;
+import com.yash.models.TaskStatus;
+
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-class Task {
-    private Long id;
-    private String title;
+public class Task {
+    private String tId;
+    private String name;
     private String description;
+    private TaskStatus taskStatus;
+    private TaskPriority priority;
+    private Date createdDate;
+    private Date submittedAt;
+    private String submittedBy;
 
-    private User manager; // manager who created/assigned
-    private List<User> assignedUsers = new ArrayList<>(); // multiple users
-//    private List<SubTask> subTasks = new ArrayList<>();
+    private List<TaskAssignment> assignments;
+    private List<TaskSubmission> submissions;
 
-    public Task() {}
-
-    public Task(Long id, String title, String description, User manager) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.manager = manager;
+    public Task() {
+        this.assignments = new ArrayList();
+        this.submissions = new ArrayList();
     }
 
-    // Getters & Setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public Task(String tId, String name, String description, TaskStatus taskStatus,
+                TaskPriority priority, Date createdDate) {
+        this.tId = tId;
+        this.name = name;
+        this.description = description;
+        this.taskStatus = taskStatus;
+        this.priority = priority;
+        this.createdDate = createdDate;
+        this.assignments = new ArrayList();
+        this.submissions = new ArrayList();
+    }
 
-    public String getTitle() { return title; }
-    public void setTitle(String title) { this.title = title; }
+    public String gettId() {
+        return tId;
+    }
 
-    public String getDescription() { return description; }
-    public void setDescription(String description) { this.description = description; }
+    public void settId(String tId) {
+        this.tId = tId;
+    }
 
-    public User getManager() { return manager; }
-    public void setManager(User manager) { this.manager = manager; }
+    public String getName() {
+        return name;
+    }
 
-    public List<User> getAssignedUsers() { return assignedUsers; }
-    public void setAssignedUsers(List<User> assignedUsers) { this.assignedUsers = assignedUsers; }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-//    public List<SubTask> getSubTasks() { return subTasks; }
-//    public void setSubTasks(List<SubTask> subTasks) { this.subTasks = subTasks; }
+    public String getDescription() {
+        return description;
+    }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
+    public TaskStatus getTaskStatus() {
+        return taskStatus;
+    }
 
-    // toString
-    @Override
-    public String toString() {
-        return "Task{id=" + id + ", title='" + title + "'}";
+    public void setTaskStatus(TaskStatus taskStatus) {
+        this.taskStatus = taskStatus;
+    }
+
+    public TaskPriority getPriority() {
+        return priority;
+    }
+
+    public void setPriority(TaskPriority priority) {
+        this.priority = priority;
+    }
+
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public Date getSubmittedAt() {
+        return submittedAt;
+    }
+
+    public void setSubmittedAt(Date submittedAt) {
+        this.submittedAt = submittedAt;
+    }
+
+    public String getSubmittedBy() {
+        return submittedBy;
+    }
+
+    public void setSubmittedBy(String submittedBy) {
+        this.submittedBy = submittedBy;
+    }
+
+    public List<TaskAssignment> getAssignments() {
+        return assignments;
+    }
+
+    public void setAssignments(List<TaskAssignment> assignments) {
+        this.assignments = assignments;
+    }
+
+    public List<TaskSubmission> getSubmissions() {
+        return submissions;
+    }
+
+    public void setSubmissions(List<TaskSubmission> submissions) {
+        this.submissions = submissions;
     }
 }
