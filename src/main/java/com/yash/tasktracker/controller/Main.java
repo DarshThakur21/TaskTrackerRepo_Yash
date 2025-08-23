@@ -1,10 +1,7 @@
 package com.yash.tasktracker.controller;
-
-
 import com.yash.tasktracker.models.User;
 import com.yash.tasktracker.models.UserRole;
 import com.yash.tasktracker.service.UserService;
-
 
 public class Main {
     public static void main(String[] args) {
@@ -16,7 +13,7 @@ public class Main {
         service.registerUser(new User("Charlie", "charlie@example.com", UserRole.EMPLOYEE));
 
         // Assign role
-        service.assignRole(3, UserRole.MANAGER); // Charlie → Manager
+        service.assignRole(3, UserRole.MANAGER);
 
         // Get all users
         System.out.println("All Users:");
@@ -27,7 +24,7 @@ public class Main {
         service.getManagers().forEach(System.out::println);
 
         // Remove user
-        service.removeUser(2); // Remove Bob
+        service.removeUser(2);
         System.out.println("\nAfter removing Bob:");
         service.getAllUsers().forEach(System.out::println);
     }
